@@ -11,19 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180124071805) do
+ActiveRecord::Schema.define(version: 20180129013856) do
 
   create_table "product_photos", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "product_id"
+    t.string   "photo_url"
   end
 
+  add_index "product_photos", ["product_id"], name: "index_product_photos_on_product_id", using: :btree
+
   create_table "products", force: true do |t|
-    t.string   "product_name"
+    t.string   "item_name"
     t.integer  "original_price_cents"
     t.integer  "sale_price_cents"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "color"
+    t.string   "size"
+    t.string   "material"
+    t.string   "brand"
+    t.string   "photo_url"
   end
 
 end

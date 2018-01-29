@@ -1,5 +1,5 @@
 class AddReferencesToProduct < ActiveRecord::Migration
   def change
-    add_index :product_photos, :product
+    add_reference :product_photos, :product, index:true
   end
 end

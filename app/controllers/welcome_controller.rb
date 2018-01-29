@@ -5,6 +5,6 @@ class WelcomeController < ApplicationController
   end
 
   def sample
-
+     @for_sale = Products.all
   end
 end
